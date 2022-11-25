@@ -1,7 +1,7 @@
 <?php
 $userphrase = $_GET["userphrase"];
 $wordcensored = $_GET["wordcensored"];
-
+var_dump($_GET);
 ?>
 
 <!DOCTYPE html>
@@ -13,13 +13,21 @@ $wordcensored = $_GET["wordcensored"];
     <title>PHP Badwords</title>
 </head>
 <body>
+    <div>
+        <h2>La tua frase:</h2>
+        <p><?php echo $userphrase; ?></p>
 
-    <span>La tua frase:</span><h2><?php echo $userphrase; ?></h2>
-    <!-- <span>parola da censurare:</span><h2><?php echo $wordcensored; ?></h2> -->
+    </div>
+    <div>
+        <h2>La tua frase con la parola censurata:</h2>
+        <p>
+            <?php
+            $censured_result = $str_replace($wordcensored, "***", $userphrase);
+            echo $censured_result;
+            ?>
+        </p>
 
-    <?php $censor_result = $str_replace("wordcensored", "***", $wordcensored);?>
-    <span>La tua frase con la parola censurata:</span><h2><?php echo $censor_result; ?></h2>
-    
+    </div>
     
 </body>
 </html>

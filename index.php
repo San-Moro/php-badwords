@@ -17,7 +17,7 @@
             <input type="text" id="wordcensored" name="wordcensored">
         </div>
         <br>
-        <button>Invia</button>
+        <button type="submit">Invia</button>
     </form>
 </body>
 </html>
